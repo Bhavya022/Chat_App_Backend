@@ -16,7 +16,7 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 connectDB();
-
+app.get('/',(req,res)=>{res.send('welcome to chat_APP_Backend'})
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/api/auth', authRoutes);
