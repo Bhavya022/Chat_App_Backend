@@ -40,22 +40,22 @@ Navigate to the project folder:
 cd chat-application-backend
 Install dependencies:
 
-bash
-Copy code
+```bash
+
 npm install
 Set up environment variables:
 
 Create a .env file in the root directory with the following:
 
 makefile
-Copy code
+
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 NODE_ENV=development
 Run the application:
 
-bash
-Copy code
+```bash
+
 npm start
 API Endpoints
 User Status
@@ -101,14 +101,14 @@ POST /typing/status
 Updates the typing status of a user.
 Request Body:
 json
-Copy code
+
 {
   "userId": "userId",
   "isTyping": true
 }
 Response:
 json
-Copy code
+
 {
   "message": "Typing status updated successfully"
 }
@@ -119,7 +119,7 @@ Retrieves all messages between two users.
 Params: senderId, recipientId (required) - The IDs of the sender and recipient.
 Response:
 json
-Copy code
+
 [
   {
     "sender": "user1",
@@ -149,6 +149,6 @@ Development
 Running in Development Mode
 For development mode, use the following command to run the app:
 
-bash
+```bash
 Copy code
 npm run dev
