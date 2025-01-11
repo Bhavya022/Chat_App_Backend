@@ -35,8 +35,8 @@ This is the backend API for a chat application that supports real-time messaging
    git clone https://github.com/yourusername/chat-application-backend.git
 Navigate to the project folder:
 
-bash
-Copy code
+```bash
+
 cd chat-application-backend
 Install dependencies:
 
