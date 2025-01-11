@@ -10,7 +10,7 @@ const typingRoutes = require('./routes/typingRoutes');
 const userRoutes = require('./routes/userRoutes');
 const setupSocket = require('./socket/socket');
 const  connectDB  = require('./config/dbConfig');
-
+const msg ="welcome to chat_App_Backend"
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
@@ -19,7 +19,7 @@ connectDB();
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use('/',"welcome to chat_APP_Backend")
+app.use('/',msg)
 app.use('/api/auth', authRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/typing', typingRoutes);
