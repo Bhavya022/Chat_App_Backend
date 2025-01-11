@@ -19,7 +19,7 @@ connectDB();
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use('/',(req,res)=>{res.send('welcome to chat_APP_Backend'})
+app.use('/',"welcome to chat_APP_Backend")
 app.use('/api/auth', authRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/typing', typingRoutes);
