@@ -25,7 +25,7 @@ const updateUserStatus = async (req, res) => {
 };
 const activeuser = async (req, res) => {
     try {
-        const users = await User.find({ status: 'online' }); // Filtering users who are online
+        const users = await User.find({ online:true }); // Filtering users who are online
       console.log(users)
 
         if (users.length === 0) {
