@@ -23,5 +23,18 @@ const updateUserStatus = async (req, res) => {
    return res.status(500).json({ message: 'Error updating user status controller' });
   }
 };
+const activeuser = async (req, res) => {
+    try {
+        const users = await User.find({ status: 'online' }); // Filtering users who are online
 
-module.exports = { getUserStatus, updateUserStatus };
+        if (users.length === 0) {
+            return res.status(200).json({ message: 'No active users at the moment' });
+        }
+
+        res.status(200).json({ users });
+    } catch (err) {
+        res.status(500).json({ message: 'Error fetching active users' });
+    }
+});
+
+module.exports = { getUserStatus, updateUserStatus,activeuser };
