@@ -18,10 +18,12 @@ connectDB();
 
 app.use(cors());
 app.use(cors({
-  origin: ['http://localhost:3000'], // Allow requests from localhost:3000
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type'],
+  origin: 'http://localhost:3000', // Allow requests only from localhost:3000
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow GET, POST, PUT, DELETE methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allow headers like Content-Type and Authorization
+  credentials: true, // Allow cookies and authentication headers to be sent
 }));
+
 app.use(bodyParser.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/messages', messageRoutes);
