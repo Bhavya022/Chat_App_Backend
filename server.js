@@ -17,6 +17,11 @@ const io = socketIo(server);
 connectDB();
 
 app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3000'], // Allow requests from localhost:3000
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+}));
 app.use(bodyParser.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/messages', messageRoutes);
