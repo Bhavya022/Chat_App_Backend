@@ -1,8 +1,9 @@
 const express = require('express');
-const { getUserStatus, updateUserStatus } = require('../controllers/userController');
+const { getUserStatus, updateUserStatus,activeuser } = require('../controllers/userController');
 const router = express.Router();
 
 router.get('/:userId/status', getUserStatus);
-router.put('/status', updateUserStatus);
+router.put('/status', updateUserStatus); 
+router.get('/active',activeuser);
 
 module.exports = router;
