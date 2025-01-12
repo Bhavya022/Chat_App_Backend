@@ -3,6 +3,6 @@ const { getUserStatus, updateUserStatus } = require('../controllers/userControll
 const router = express.Router();
 
 router.get('/:userId/status', getUserStatus);
-router.post('/status', updateUserStatus);
+router.put('/status', updateUserStatus);
 
 module.exports = router;
